@@ -1,0 +1,4 @@
+Linter_Test.Tests/
+AssemblyInfo.cs
+**/AppData/*.cs
+PVM.Web.Tests/

@@ -1,0 +1,19 @@
+{
+  "threshold": 0,
+  "reporters": ["html", "markdown", "badge"],
+  "ignore": [
+    "**/node_modules/**",
+    "**/.git/**",
+    "**/.rbenv/**",
+    "**/.venv/**",
+    "**/*cache*/**",
+    "**/.github/**",
+    "**/.idea/**",
+    "**/report/**",
+    "**/*.svg",
+    "**/Scripts/modernizer*.js",
+    "**/Scripts/jquery*.js",
+    "**/Scripts/bootstrap*.js",
+    "**/packages/**"
+  ]
+}

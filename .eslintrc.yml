@@ -1,0 +1,5 @@
+---
+rules:
+  # Override default settings
+  strict: off  
+  semi: off
