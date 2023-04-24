@@ -1,0 +1,41 @@
+# Configuration file for MegaLinter
+# See all available variables at https://megalinter.io/configuration/ and in linters documentation
+
+SHOW_ELAPSED_TIME: true
+FILEIO_REPORTER: true
+CSHARP_DOTNET_FORMAT_DISABLE_ERRORS: true
+
+# PRE_COMMANDS: Helpful if you need to run commands right after the container is up
+
+ENABLE_LINTERS: 
+  - YAML_YAMLLINT
+  #- CSHARP_DOTNET_FORMAT
+  - JSON_JSONLINT
+  #- JAVASCRIPT_ES
+  - SPELL_CSPELL
+  - REPOSITORY_TRIVY
+  - REPOSITORY_GITLEAKS
+
+LINTER_RULES_PATH: megalinter-config
+JSON_JSONLINT_CONFIG_FILE: .jsonlintrc.json
+JSON_JSONLINT_DISABLE_ERRORS: true
+
+JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.yml
+JAVASCRIPT_ES_RULES_PATH: megalinter-config
+JAVASCRIPT_ES_DISABLE_ERRORS: true
+
+SPELL_CSPELL_RULES_PATH: megalinter-config
+SPELL_CSPELL_CONFIG_FILE: .cspell.json
+SPELL_CSPELL_DISABLE_ERRORS: true
+
+YAML_YAMLLINT_RULES_PATH: megalinter-config
+YAML_YAMLLINT_CONFIG_FILE: .yamllint.yml
+
+REPOSITORY_GITLEAKS_CONFIG_FILE: .gitleaks.toml
+REPOSITORY_GITLEAKS_RULES_PATH: megalinter-config
+REPOSITORY_GITLEAKS_DISABLE_ERRORS: true
+
+REPOSITORY_TRIVY_RULES_PATH: megalinter-config
+REPOSITORY_TRIVY_CONFIG_FILE: trivy.yaml
+REPOSITORY_TRIVY_DISABLE_ERRORS: true
+
