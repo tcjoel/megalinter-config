@@ -5,8 +5,10 @@ name: MegaLinter
 on:
   workflow_call:
     secrets:
-       TEST_SECRET:
-          required: true
+      TEST_SECRET:
+        required: false
+        type: string
+        default: "test-secret"
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
   cancel-in-progress: true
