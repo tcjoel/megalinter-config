@@ -7,7 +7,7 @@ CSHARP_DOTNET_FORMAT_DISABLE_ERRORS: true
 
 # PRE_COMMANDS: Helpful if you need to run commands right after the container is up
 
-ENABLE_LINTERS: 
+ENABLE_LINTERS:
   - YAML_YAMLLINT
   #- CSHARP_DOTNET_FORMAT
   - JSON_JSONLINT
