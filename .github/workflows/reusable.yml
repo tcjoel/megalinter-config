@@ -1,0 +1,33 @@
+---
+# MegaLinter GitHub Action configuration file for demo
+# More info at https://megalinter.io
+name: MegaLinter
+on:
+  workflow_call:
+    secrets:
+       TEST_SECRET:
+          required: true
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: MegaLinter
+    runs-on: ubuntu-latest
+    steps:
+      # Git Checkout
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      #   env:
+      - name: cloning-config
+        run: |
+            git clone https://${{secrets.TEST_SECRET}}@github.com/tcjoel/megalinter-config.git
+            mv megalinter-config/rules/.editorconfig .
+            mv megalinter-config/mega/.mega-linter.yml .
+            ls -al
+
+      # MegaLinter
+      - name: MegaLinter
+        id: ml
+        uses: oxsecurity/megalinter@v6
