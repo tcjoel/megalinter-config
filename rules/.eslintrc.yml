@@ -1,5 +1,5 @@
 ---
 rules:
   # Override default settings
-  strict: off  
+  strict: off
   semi: off
