@@ -5,9 +5,7 @@ on:
   workflow_call:
     secrets:
       TEST_SECRET:
-        required: false
-        type: string
-        default: "test-secret"
+        required: true
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
   cancel-in-progress: true
