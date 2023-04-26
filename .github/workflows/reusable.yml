@@ -14,7 +14,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # To copy our entire code in this ubuntu-latest VM 
+      # To copy our entire code in this ubuntu-latest VM
       - name: Checkout Code
         uses: actions/checkout@v3
       # To clone our external rule in this ubuntu-latest VM
