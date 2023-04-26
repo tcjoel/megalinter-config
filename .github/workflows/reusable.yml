@@ -15,13 +15,12 @@ concurrency:
 
 jobs:
   build:
-    name: MegaLinter
     runs-on: ubuntu-latest
     steps:
-      # Git Checkout
+      # To copy our entire code in this ubuntu-latest VM 
       - name: Checkout Code
         uses: actions/checkout@v3
-      #   env:
+      # To clone our external rule in this ubuntu-latest VM
       - name: cloning-config
         run: |
             git clone https://${{secrets.TEST_SECRET}}@github.com/tcjoel/megalinter-config.git
@@ -29,7 +28,7 @@ jobs:
             mv megalinter-config/mega/.mega-linter.yml .
             ls -al
 
-      # MegaLinter
+      # To do the linting of our code with MegaLinter
       - name: MegaLinter
         id: ml
         uses: oxsecurity/megalinter@v6
