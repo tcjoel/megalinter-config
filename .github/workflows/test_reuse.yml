@@ -1,0 +1,8 @@
+name: test reusable
+on: workflow_call
+jobs:
+    called_job:
+        runs-on: ubuntu-latest
+        steps:
+          - name: gredding
+            run: echo "Hello word"
