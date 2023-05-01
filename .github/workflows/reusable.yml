@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   build:
-    runs-on: ubuntu-latest-4-cores
+    runs-on: ubuntu-latest
     # container: oxsecurity/megalinter:v6
     steps:
       # To copy our entire code in this ubuntu-latest VM
@@ -20,7 +20,7 @@ jobs:
       # To clone our external rule in this ubuntu-latest VM
       - name: cloning-config
         run: |
-            git clone https://${{secrets.TEST_SECRET}}@github.com/tcjoel/megalinter-config.git
+            git clone https://${{secrets.TEST_SECRET}}@github.com/Experity/mega-linter.git
             mv megalinter-config/rules/.editorconfig .
             mv megalinter-config/mega/.mega-linter.yml .
             echo $(PWD) > place
