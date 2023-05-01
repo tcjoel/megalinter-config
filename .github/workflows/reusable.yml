@@ -13,6 +13,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: oxsecurity/megalinter:v6
     steps:
       # To copy our entire code in this ubuntu-latest VM
       - name: Checkout Code
@@ -25,7 +26,7 @@ jobs:
             mv megalinter-config/mega/.mega-linter.yml .
             ls -al
 
-      # To do the linting of our code with MegaLinter
-      - name: MegaLinter
-        id: ml
-        uses: oxsecurity/megalinter@v6
+      # # To do the linting of our code with MegaLinter
+      # - name: MegaLinter
+      #   id: ml
+      #   uses: oxsecurity/megalinter@v6
