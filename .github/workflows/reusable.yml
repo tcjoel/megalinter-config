@@ -30,4 +30,4 @@ jobs:
       - name: MegaLinter
         # id: ml
         # uses: oxsecurity/megalinter@v6
-        run: docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:rw -v $(pwd):/tmp/lint:rw oxsecurity/megalinter:v6
+        run: docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:rw -v $(pwd):.:rw oxsecurity/megalinter:v6
