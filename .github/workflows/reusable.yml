@@ -21,7 +21,7 @@ jobs:
       # To clone our external rule in this ubuntu-latest VM
       - name: cloning-config
         run: |
-            git clone https://${{secrets.TEST_SECRET}}@github.com/Experity/mega-linter.git
+            git clone https://${{secrets.TEST_SECRET}}@github.com/tcjoel/megalinter-config.git
             mv megalinter-config/rules/.editorconfig .
             mv megalinter-config/mega/.mega-linter.yml .
             echo $(PWD) > place
