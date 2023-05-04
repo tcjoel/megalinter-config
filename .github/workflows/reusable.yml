@@ -28,6 +28,6 @@ jobs:
 
       # To do the linting of our code with MegaLinter
       - name: MegaLinter
-        id: ml
+        # id: ml
         # uses: oxsecurity/megalinter@v6
         run: docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:rw -v $(pwd):$(place):rw oxsecurity/megalinter:v6
