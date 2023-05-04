@@ -12,7 +12,7 @@ concurrency:
 jobs:
   build:
     runs-on: macOS-latest
-    # container: oxsecurity/megalinter:v6
+    container: oxsecurity/megalinter:v6
     steps:
       # To copy our entire code in this ubuntu-latest VM
       - name: Checkout Code
@@ -29,5 +29,5 @@ jobs:
       # To do the linting of our code with MegaLinter
       - name: MegaLinter
         id: ml
-        uses: oxsecurity/megalinter@v6
-        # run: docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:rw -v $(pwd):$(place):rw oxsecurity/megalinter:v6
+        # uses: oxsecurity/megalinter@v6
+        run: docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:rw -v $(pwd):$(place):rw oxsecurity/megalinter:v6
